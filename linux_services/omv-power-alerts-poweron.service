@@ -1,0 +1,11 @@
+[Unit]
+Description=Notify on system poweron
+DefaultDependencies=no
+After=multi-user.target
+
+[Service]
+Type=oneshot
+ExecStart=/etc/systemd/system/omv-power-alerts.d/omv-power-alerts poweron /etc/systemd/system/omv-power-alerts.d/.env
+
+[Install]
+WantedBy=multi-user.target

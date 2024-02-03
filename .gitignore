@@ -1,0 +1,9 @@
+# Environment
+.idea
+
+# Config
+.env
+
+# Build
+*.out
+*.exe
