@@ -37,6 +37,17 @@ func GenerateSleepEmbed() WebhookPayload {
 	}
 }
 
+func GenerateWakeEmbed() WebhookPayload {
+	return WebhookPayload{
+		Content: "",
+		Embeds: []Embed{{
+			Title:    "Wake Event triggered",
+			Color:    0x35b7e0,
+			Datetime: time.Now().Format(time.RFC3339),
+		}},
+	}
+}
+
 func GenerateRebootEmbed() WebhookPayload {
 	return WebhookPayload{
 		Content: "",

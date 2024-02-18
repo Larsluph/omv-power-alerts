@@ -26,6 +26,8 @@ func main() {
 		discord.SendWebhook(discord.GeneratePowerOffEmbed())
 	case "sleep":
 		discord.SendWebhook(discord.GenerateSleepEmbed())
+	case "wake":
+		discord.SendWebhook(discord.GenerateWakeEmbed())
 	case "reboot":
 		discord.SendWebhook(discord.GenerateRebootEmbed())
 	default:

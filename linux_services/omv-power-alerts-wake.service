@@ -1,0 +1,6 @@
+[Unit]
+Description=Notify on system wake
+
+[Service]
+Type=oneshot
+ExecStart=/etc/systemd/system/omv-power-alerts.d/wake_detect.sh
