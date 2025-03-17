@@ -39,22 +39,22 @@ generate_embed() {
 # Determine the alert type and generate corresponding payload
 case "$ALERT_NAME" in
   "poweron")
-    PAYLOAD=$(generate_embed "Power ON Event triggered" 0x13B10B)
+    PAYLOAD=$(generate_embed "Power ON Event triggered" $((0x13B10B)))
     ;;
   "poweroff")
-    PAYLOAD=$(generate_embed "Power OFF Event triggered" 0xBA0808)
+    PAYLOAD=$(generate_embed "Power OFF Event triggered" $((0xBA0808)))
     ;;
   "sleep")
-    PAYLOAD=$(generate_embed "Sleep Event triggered" 0xCBA20C)
+    PAYLOAD=$(generate_embed "Sleep Event triggered" $((0xCBA20C)))
     ;;
   "wake")
-    PAYLOAD=$(generate_embed "Wake Event triggered" 0x35b7e0)
+    PAYLOAD=$(generate_embed "Wake Event triggered" $((0x35b7e0)))
     ;;
   "reboot")
-    PAYLOAD=$(generate_embed "Reboot Event triggered" 0x0C4CCB)
+    PAYLOAD=$(generate_embed "Reboot Event triggered" $((0x0C4CCB)))
     ;;
   *)
-    PAYLOAD=$(generate_embed "Unknown Event triggered" 0xFFFFFF)
+    PAYLOAD=$(generate_embed "Unknown Event triggered" $((0xFFFFFF)))
     ;;
 esac
 
