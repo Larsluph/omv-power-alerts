@@ -1,9 +1,0 @@
-[Unit]
-Description=Wake detect timer
-
-[Timer]
-OnBootSec=1min
-OnUnitActiveSec=10min
-
-[Install]
-WantedBy=timers.target

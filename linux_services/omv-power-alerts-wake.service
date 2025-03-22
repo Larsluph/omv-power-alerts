@@ -1,6 +1,11 @@
 [Unit]
 Description=Notify on system wake
+DefaultDependencies=no
+After=supend.target
 
 [Service]
 Type=oneshot
-ExecStart=/etc/systemd/system/omv-power-alerts.d/wake_detect.sh
+ExecStart=/etc/systemd/system/omv-power-alerts.d/omv-power-alerts wake /etc/systemd/system/omv-power-alerts.d/.env
+
+[Install]
+WantedBy=suspend.target

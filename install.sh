@@ -35,13 +35,6 @@ for file in ./linux_services/*.service; do
   cp "$file" "/etc/systemd/system"
 done
 
-for file in ./linux_services/*.timer; do
-  cp "$file" "/etc/systemd/system"
-done
-
-cp "./linux_services/wake_detect.sh" "/etc/systemd/system/omv-power-alerts.d/wake_detect.sh"
-chmod +x "/etc/systemd/system/omv-power-alerts.d/wake_detect.sh"
-
 # Reload systemd manager configuration
 systemctl daemon-reload
 
@@ -51,8 +44,7 @@ systemctl enable omv-power-alerts-poweroff.service
 systemctl enable omv-power-alerts-poweron.service
 systemctl enable omv-power-alerts-reboot.service
 systemctl enable omv-power-alerts-sleep.service
-systemctl enable omv-power-alerts-wake.timer
-systemctl start omv-power-alerts-wake.timer
+systemctl enable omv-power-alerts-wake.service
 
 # Cleanup
 cd ..
