@@ -1,11 +1,10 @@
 [Unit]
 Description=Notify on system hibernate
-DefaultDependencies=no
-Before=exit.target
+Before=systemd-hibernate.service
 
 [Service]
 Type=oneshot
 ExecStart=/etc/systemd/system/omv-power-alerts.d/omv-power-alerts hibernate /etc/systemd/system/omv-power-alerts.d/.env
 
 [Install]
-WantedBy=hibernate.target
+WantedBy=systemd-hibernate.service

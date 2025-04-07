@@ -1,11 +1,10 @@
 [Unit]
 Description=Notify on system sleep
-DefaultDependencies=no
-Before=exit.target
+Before=systemd-suspend.service
 
 [Service]
 Type=oneshot
 ExecStart=/etc/systemd/system/omv-power-alerts.d/omv-power-alerts sleep /etc/systemd/system/omv-power-alerts.d/.env
 
 [Install]
-WantedBy=sleep.target
+WantedBy=systemd-suspend.service
