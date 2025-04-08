@@ -1,6 +1,14 @@
 [Unit]
 Description=Notify on system wake
+After=systemd-suspend.service
+After=systemd-hibernate.service
+After=systemd-suspend-then-hibernate.service
 
 [Service]
 Type=oneshot
-ExecStart=/etc/systemd/system/omv-power-alerts.d/wake_detect.sh
+ExecStart=/etc/systemd/system/omv-power-alerts.d/omv-power-alerts wake /etc/systemd/system/omv-power-alerts.d/.env
+
+[Install]
+WantedBy=systemd-suspend.service
+WantedBy=systemd-hibernate.service
+WantedBy=systemd-suspend-then-hibernate.service

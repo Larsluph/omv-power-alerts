@@ -1,7 +1,7 @@
 [Unit]
 Description=Notify on system reboot
 DefaultDependencies=no
-Before=exit.target
+Before=reboot.target
 
 [Service]
 Type=oneshot
