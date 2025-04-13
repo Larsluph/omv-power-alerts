@@ -23,7 +23,7 @@ fi
 # Function to send webhook
 send_webhook() {
   local PAYLOAD=$1
-  local WEBHOOK_URL="https://discord.com/api/webhooks/$WEBHOOK_ID/$WEBHOOK_TOKEN"
+  local WEBHOOK_URL="https://discord.com/api/webhooks/$WEBHOOK_ID/$WEBHOOK_TOKEN?wait=true"
   curl -X POST -H "Content-Type: application/json" -d "$PAYLOAD" "$WEBHOOK_URL"
 }
 
